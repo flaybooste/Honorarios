@@ -1,0 +1,23 @@
+{% include 'main.html' %}
+<div class="container">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for el in empresas %}
+        <tr>
+          <th scope="row">{{el[0]}}</th>
+          <td><a href='/empresa/{{el[0]}}'>{{el[1]}}</a></td>
+          <td>{{el[2]}}</td>
+       </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+</div>

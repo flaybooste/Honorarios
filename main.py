@@ -1,4 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify, request
+from db import dbSQL
+import json
 
 app = Flask('honorarios', template_folder='./static')
 
@@ -8,5 +10,20 @@ def index():
 
 @app.route("/honorarios")
 def hon():
-	return render_template('hon.html')
+	empID = dbSQL().selectSQL()
+	jsn = json.dumps(empID)
+	return render_template('hon.html', ids = json.loads(jsn))
+
+@app.route("/cadastro_empresas", methods=['GET','POST'])
+def cadastro():
+	if request.method == "POST":
+		dbSQL().updateTblValor(request.form['valor'], request.form['id'])
+	empID = dbSQL().selectSQL()
+	return render_template('empresas.html' , empresas=empID)
+
+@app.route("/empresa/<id>", methods=['GET',' POST'])
+def empresa(id):
+	emp = dbSQL().selectId(id)
+	return render_template('empresa.html', emp=emp)
+
 app.run(debug=True)

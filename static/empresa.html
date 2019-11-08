@@ -1,0 +1,24 @@
+{% include 'main.html' %}
+<div class="container">
+        <div class="row">
+            <div class="form-group mb-1">
+                <input type="text" readonly class="form-control-plaintext" id="id_input" value="{{emp[0][0]}}">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Nome empresa" id="nome_emp" value="{{emp[0][1]}}">
+            </div>
+            <div class="form-group mb-4">
+                <input type="text" class="form-control" placeholder="Valor" id="valorhon" value="">
+            </div>
+            <div class="form-group mb-2">
+                <input class="btn btn-primary" value="Enviar" id="btn_send" type="submit">
+            </div>
+        </div>
+
+</div>
+<script>
+$("#btn_send").click(function(){
+  $.post('/cadastro_empresas', { id: $("#id_input").val(), valor: $("#valorhon").val() });
+  window.open('/cadastro_empresas')
+});
+</script>

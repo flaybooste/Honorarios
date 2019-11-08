@@ -1,2 +1,13 @@
 {% include 'main.html' %}
-Honorários
+<form>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Empresas</label>
+        <select class="form-control" id="select1">
+          <script>
+              {% for el in ids %}
+                document.getElementById('select1').innerHTML += "<option>{{el[0]}} - {{el[1]}}</option>"
+              {% endfor %}
+          </script>
+        </select>
+      </div>
+</form>
