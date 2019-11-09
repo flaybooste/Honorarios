@@ -46,3 +46,7 @@ class dbSQL:
 	def updateTblValor(self, valor, id):
 		self.cur.execute('UPDATE empresas SET valor={} WHERE id={}'.format(valor, id))
 		self.con.commit()
+
+	def updateAllTblValor(self, valor):
+		self.cur.execute('UPDATE empresas SET valor={}'.format(valor))
+		self.con.commit()

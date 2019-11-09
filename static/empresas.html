@@ -10,10 +10,15 @@
     </thead>
     <tbody>
       {% for el in empresas %}
+      
         <tr>
           <th scope="row">{{el[0]}}</th>
           <td><a href='/empresa/{{el[0]}}'>{{el[1]}}</a></td>
-          <td>{{el[2]}}</td>
+          {% if el[2]|string|length %}
+          <td>R${{ el[2]|string| replace(".",",") }}</td>
+          {% elif el[2] == None %}
+          <td>R$0,00</td>
+          {% endif %}
        </tr>
       {% endfor %}
     </tbody>
