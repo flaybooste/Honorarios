@@ -17,7 +17,7 @@ def hon():
 @app.route("/cadastro_empresas", methods=['GET','POST'])
 def cadastro():
 	if request.method == "POST":
-		dbSQL().updateTblValor(request.form['valor'], request.form['id'])
+		dbSQL().updateTblValor(round(float(request.form['valor']),2), request.form['id'])
 	empID = dbSQL().selectSQL()
 	return render_template('empresas.html' , empresas=empID)
 
