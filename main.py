@@ -26,4 +26,4 @@ def empresa(id):
 	emp = dbSQL().selectId(id)
 	return render_template('empresa.html', emp=emp)
 
-app.run(debug=True)
+app.run(host='0.0.0.0',debug=True)
