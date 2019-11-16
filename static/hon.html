@@ -1,19 +1,22 @@
 {% include 'main.html' %}
 <div class="container">
-<form id="fm" class="form-inline">
-  <div class="form-group mb-2">
-    <label for="exampleFormControlSelect1">Empresas &nbsp;</label>
-    <select class="form-control" v-model='emp' id="select1">
+<form id="fm" class="form-row align-items-center">
+  <div class="col-auto">
+    <select class="form-control mb-2" v-model='emp' id="select1">
       </select>
-      </div>
       
       <div class="form-group mx-sm-2 mb-2">
           <input type="text" class="form-control sm" v-model='mon' id="text" placeholder="mes">
           </div>
           <div class="form-group mx-sm-2 mb-2">
 
-          <input type="text" class="form-control sm" v-model='year' id="text" placeholder="ano">
-</div>
+          <input type="text" class="form-control sm-1" v-model='year' id="text" placeholder="ano">
+          </div>
+          <div class="form-group mx-sm-2 mb-2">
+
+          <input type="text" class="form-control sm -1" v-model='valor' id="valor" placeholder="valor">
+          </div>
+        </div>  
       <img src="https://fonts.gstatic.com/s/i/materialicons/print/v1/24px.svg" v-on:click="imprimir">
       
     <div class='container'>
@@ -23,10 +26,6 @@
   <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
   text-align:center;line-height:115%'><b><i><u><span style='font-size:14.0pt;
   line-height:115%;font-family:"Lucida Calligraphy"'>CARLAS PORTO CONTABILIDADE</span></u></i></b></p>
-
-
-
-
   
   <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
   text-align:center;line-height:115%'><span style='font-family:"Cambria","serif"'>Rua
@@ -42,7 +41,7 @@
   
   
   <p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
-  line-height:normal'><b><span style='font-size:12.0pt'>RECIBO DE HONORÁRIO 10/2019</span></b></p>
+  line-height:normal'><b><span style='font-size:12.0pt'>RECIBO DE HONORÁRIO [[mon-1]]/[[year]]</span></b></p>
   
   <p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
   line-height:normal'><b><span style='font-size:12.0pt'>VENCIMENTO: 05/[[mon]]/[[year]]</span></b></p>
@@ -94,10 +93,10 @@
       
       
       <p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
-      line-height:normal'><b><span style='font-size:12.0pt'>RECIBO DE HONORÁRIO 10/2019</span></b></p>
+      line-height:normal'><b><span style='font-size:12.0pt'>RECIBO DE HONORÁRIO [[mon]]/[[year]]</span></b></p>
       
       <p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
-      line-height:normal'><b><span style='font-size:12.0pt'>VENCIMENTO: 05/11/2019</span></b></p>
+      line-height:normal'><b><span style='font-size:12.0pt'>VENCIMENTO: 05/[[mon]]/[[year]]</span></b></p>
       
       
       
@@ -138,13 +137,14 @@
         let mes = data.getMonth() + 1
         let dia = data.getDay() 
         {% for el in ids %}
-        document.getElementById('select1').innerHTML += "<option>{{el[1]}}</option>" 
+        document.getElementById('select1').innerHTML += "<option>{{el[1]}}</option>"
         {% endfor %}
         var select = new Vue({
           el: "#fm",
           delimiters: ['[[', ']]'],
           data:{
             emp: $("#select1").val(),
+            valor: 0,
             day: 05,
             mon: mes,
             year: ano
