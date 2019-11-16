@@ -1,13 +1,162 @@
 {% include 'main.html' %}
-<form>
-    <div class="form-group">
-        <label for="exampleFormControlSelect1">Empresas</label>
-        <select class="form-control" id="select1">
-          <script>
-              {% for el in ids %}
-                document.getElementById('select1').innerHTML += "<option>{{el[0]}} - {{el[1]}}</option>"
-              {% endfor %}
-          </script>
-        </select>
+<div class="container">
+<form id="fm" class="form-inline">
+  <div class="form-group mb-2">
+    <label for="exampleFormControlSelect1">Empresas &nbsp;</label>
+    <select class="form-control" v-model='emp' id="select1">
+      </select>
       </div>
-</form>
+      
+      <div class="form-group mx-sm-2 mb-2">
+          <input type="text" class="form-control sm" v-model='mon' id="text" placeholder="mes">
+          </div>
+          <div class="form-group mx-sm-2 mb-2">
+
+          <input type="text" class="form-control sm" v-model='year' id="text" placeholder="ano">
+</div>
+      <img src="https://fonts.gstatic.com/s/i/materialicons/print/v1/24px.svg" v-on:click="imprimir">
+      
+    <div class='container'>
+    <div class=WordSection1 id="honorario">
+    <div class="shadow p-3 mb-5 bg-white rounded">
+    <span class="d-block p-2 text-black">
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><i><u><span style='font-size:14.0pt;
+  line-height:115%;font-family:"Lucida Calligraphy"'>CARLAS PORTO CONTABILIDADE</span></u></i></b></p>
+
+
+
+
+  
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><span style='font-family:"Cambria","serif"'>Rua
+  Princesa Diana, casa C - Cidade Nova </span></p>
+  
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><span style='font-family:"Cambria","serif"'>Em
+  frente a praça Joana Fonseca - Iguaba Grande - RJ</span></p>
+  
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:200%'><span style='font-family:"Cambria","serif"'>Tel:
+  (22) 98836-4868 - (22) 997500141</span></p>
+  
+  
+  <p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
+  line-height:normal'><b><span style='font-size:12.0pt'>RECIBO DE HONORÁRIO 10/2019</span></b></p>
+  
+  <p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
+  line-height:normal'><b><span style='font-size:12.0pt'>VENCIMENTO: 05/[[mon]]/[[year]]</span></b></p>
+  
+  
+  
+  <p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
+  line-height:normal'><b><span style='font-size:12.0pt'>Empresa: [[emp]]</span></b></p>
+  <p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
+  line-height:normal'><span style='font-size:12.0pt'>Honorário ..........................................................R$
+  500,00</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
+  line-height:200%'><span style='font-size:12.0pt;line-height:200%'>Total ..................................................................R$
+  </span><span class=Ttulo2Char><span style='font-size:13.0pt;line-height:200%;
+  color:windowtext'>500,00</span></span></p>
+  
+  <p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
+  line-height:115%'><span style='font-size:12.0pt;line-height:115%'>Declaro que
+  recebi esta quantia por serviços contábeis prestados no período acima.</span></p>
+  
+  <p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
+  line-height:normal'><span style='font-size:12.0pt'>Iguaba Grande,
+  ___/____/______ _______________________________</span></p>
+  
+  <p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
+  line-height:200%'><b><span style='font-size:10.0pt;line-height:200%'>Carlas Souza
+  Porto</span></p></b>
+</span>
+    </div>
+    &nbsp;
+    <div class="shadow p-3 mb-5 bg-white rounded">
+        <span class="d-block p-2 text-black">
+      <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+      text-align:center;line-height:115%'><b><i><u><span style='font-size:14.0pt;
+      line-height:115%;font-family:"Lucida Calligraphy"'>CARLAS PORTO CONTABILIDADE</span></u></i></b></p>
+
+      <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+      text-align:center;line-height:115%'><span style='font-family:"Cambria","serif"'>Rua
+      Princesa Diana, casa C - Cidade Nova </span></p>
+      
+      <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+      text-align:center;line-height:115%'><span style='font-family:"Cambria","serif"'>Em
+      frente a praça Joana Fonseca - Iguaba Grande - RJ</span></p>
+      
+      <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+      text-align:center;line-height:200%'><span style='font-family:"Cambria","serif"'>Tel:
+      (22) 98836-4868 - (22) 997500141</span></p>
+      
+      
+      <p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
+      line-height:normal'><b><span style='font-size:12.0pt'>RECIBO DE HONORÁRIO 10/2019</span></b></p>
+      
+      <p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
+      line-height:normal'><b><span style='font-size:12.0pt'>VENCIMENTO: 05/11/2019</span></b></p>
+      
+      
+      
+      <p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
+      line-height:normal'><b><span style='font-size:12.0pt'>Empresa: [[emp]]</span></b></p>
+      
+      
+      
+      <p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
+      line-height:normal'><span style='font-size:12.0pt'>Honorário ..........................................................R$
+      500,00</span></p>
+    
+    <p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
+      line-height:200%'><span style='font-size:12.0pt;line-height:200%'>Total ..................................................................R$
+      </span><span class=Ttulo2Char><span style='font-size:13.0pt;line-height:200%;
+      color:windowtext'>500,00</span></span></p>
+      
+      <p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
+      line-height:115%'><span style='font-size:12.0pt;line-height:115%'>Declaro que
+      recebi esta quantia por serviços contábeis prestados no período acima.</span></p>
+      
+      <p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
+      line-height:normal'><span style='font-size:12.0pt'>Iguaba Grande,
+      ___/____/______ _______________________________</span></p>
+      
+      <p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
+      line-height:200%'><b><span style='font-size:10.0pt;line-height:200%'>Carlas Souza
+      Porto</span></p></b>
+    </span>
+        </div>
+      </form>
+  </div>
+
+  
+      <script>
+        let data = new Date()
+        let ano = data.getFullYear()
+        let mes = data.getMonth() + 1
+        let dia = data.getDay() 
+        {% for el in ids %}
+        document.getElementById('select1').innerHTML += "<option>{{el[1]}}</option>" 
+        {% endfor %}
+        var select = new Vue({
+          el: "#fm",
+          delimiters: ['[[', ']]'],
+          data:{
+            emp: $("#select1").val(),
+            day: 05,
+            mon: mes,
+            year: ano
+          },methods:{
+            imprimir: function(){
+              let conteudo =  document.getElementById('honorario').innerHTML,
+              tela_conteudo = window.open('about:blank');
+              tela_conteudo.document.write(conteudo);
+              tela_conteudo.window.print();
+              tela_conteudo.window.close();
+            }
+          }
+        })
+      </script>
+   
