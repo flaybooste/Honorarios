@@ -34,8 +34,4 @@ def empresa(id):
 def teste():
     return render_template('barbudo.html')
 
-@app.route("/paty")
-def paty():
-    return 'te amo muito'
-
 app.run(port=5000, host='0.0.0.0',debug=True)
