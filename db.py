@@ -2,15 +2,6 @@ import json
 #import leitorcsv
 import sqlite3
 
-'''class dbJson:
-	def escreverJson(self):
-		with open('./static/db.json', 'w') as _f:
-			try:
-				json.dump(leitorcsv.ler(), _f)
-			except:
-				print('nao funcionou')
-				pass'''
-
 class dbSQL:
 	def __init__(self):
 		self.con = sqlite3.connect('./static/main.db')
